@@ -31,12 +31,29 @@
        <input id="fecha" type="date" class="formulario__input" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
 
        <label for="hora" class="formulario__label">HORA DE RESERVA (4 PM - 8 PM)</label>
-       <input id="hora" type="text" class="formulario__input" placeholder="4:00 PM" required>
+<input id="hora" type="text" class="formulario__input" placeholder="4:00 PM" required>
+
+<script>
+    document.querySelector('#hora').addEventListener('input', function(event) {
+        let timeValue = event.target.value;
+
+        // Regex para validar el formato de hora 12 horas (ejemplo: 4:00 PM o 4:00 AM)
+        let regex = /^([1-9]|1[0-2]):([0-5][0-9])\s?(AM|PM)$/i;
+
+        if (regex.test(timeValue)) {
+            // Si el formato es correcto, no hacemos nada
+        } else {
+            // Si el formato no es correcto, puedes mostrar un mensaje o corregirlo
+            console.log("Formato de hora inválido. Asegúrate de usar el formato 12 horas (ej: 4:00 PM)");
+        }
+    });
+</script>
+
 
        <button id="submit" type="button" class="formulario__submit">Enviar a WhatsApp</button>
     </form>
 
-    <!-- Incluimos el script de JavaScript -->
     <script src="js/form.js"></script>
 </body>
 </html>
+
