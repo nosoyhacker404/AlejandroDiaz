@@ -7,7 +7,7 @@ document.querySelector('#submit').addEventListener('click', function(event) {
     let servicio1 = document.querySelector('#servicio').value;
 
     // Crear la URL de WhatsApp con los parámetros
-    let url = "https://api.whatsapp.com/send?phone=50258434148&text=*_Reserva_*%0A*De*%0A%0A*Cita*%0A" + cliente + 
+    let url = "https://api.whatsapp.com/send?phone=+50258434148&text=*_Reserva_*%0A*De*%0A%0A*Cita*%0A" + cliente + 
     "%0A*Inventory Date*%0A" + fecha + 
     "%0A*Inventory Time*%0A" + hora + 
     "%0A*Servicio*%0A" + servicio1;   
